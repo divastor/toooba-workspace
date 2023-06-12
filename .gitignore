@@ -6,5 +6,5 @@ toooba-app/*.log
 toooba-app/*.hex
 toooba-app/*.csv
 toooba-app/results/*
-toooba-app/elf_to_hex
-toooba-app/exe_HW_sim
+toooba-app/util/elf_to_hex
+toooba-app/util/exe_HW_sim

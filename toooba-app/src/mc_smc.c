@@ -19,7 +19,7 @@ static uint64_t results[256];
 
 int main(void){
   uint8_t* secretPtr = &secret;
-  printf("Starting...\n");
+  printf("Starting...\n\n");
   for (uint64_t offset = 0; offset < sizeof(secret); ++offset){
     // printf("Searching for secret #%d, addr:0x%x, value(dec):%d, reload_buf:0x%x\n", offset, (uint8_t*)((uint64_t)secretPtr + offset), secretPtr[offset], &reload_buf);
     for(uint64_t cIdx = 0; cIdx < 256; ++cIdx){

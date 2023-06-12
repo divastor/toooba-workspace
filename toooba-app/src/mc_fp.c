@@ -27,7 +27,7 @@ int main(void){
   uint64_t fp_y = (uint64_t)Y_VAL;
   int* xPtr = &fp_x;
   int* yPtr = &fp_y;
-  printf("Starting...\n");
+  printf("Starting...\n\n");
   printf("(fp_x, fp_y) = (0x%x|%x, 0x%x|%x)\n",xPtr[1],xPtr[0],yPtr[1],yPtr[0]);
   for (uint64_t offset = 0; offset < sizeof(secret); ++offset){
     // printf("Searching for secret #%d, addr:0x%x, value(dec):%d, reload_buf:0x%x\n", offset, (uint8_t*)((uint64_t)secretPtr + offset), secretPtr[offset], &reload_buf);
