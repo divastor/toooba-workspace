@@ -1,0 +1,10 @@
+.vscode
+toooba-app/out
+toooba-app/obj_dir
+toooba-app/snapshots
+toooba-app/*.log
+toooba-app/*.hex
+toooba-app/*.csv
+toooba-app/results/*
+toooba-app/elf_to_hex
+toooba-app/exe_HW_sim

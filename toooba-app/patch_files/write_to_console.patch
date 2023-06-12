@@ -1,0 +1,31 @@
+diff --git a/builds/RV64ACDFIMSU_Toooba_verilator/Verilog_RTL/mkTop_HW_Side.v b/builds/RV64ACDFIMSU_Toooba_verilator/Verilog_RTL/mkTop_HW_Side.v
+index 5e3febf..23a9978 100644
+--- a/builds/RV64ACDFIMSU_Toooba_verilator/Verilog_RTL/mkTop_HW_Side.v
++++ b/builds/RV64ACDFIMSU_Toooba_verilator/Verilog_RTL/mkTop_HW_Side.v
+@@ -221,6 +221,13 @@ module mkTop_HW_Side(CLK,
+   `endif // BSV_NO_INITIAL_BLOCKS
+   // synopsys translate_on
+ 
++  /********* my edit ********/
++  integer fd;
++  initial
++  begin
++    fd = $fopen("console.log","w");
++  end
++  /**************************/
+   // handling of system tasks
+ 
+   // synopsys translate_off
+@@ -279,8 +286,11 @@ module mkTop_HW_Side(CLK,
+ 		 tohost_addr__h647,
+ 		 fromhost_addr__h648);
+     if (RST_N != `BSV_RESET_VALUE)
+-      if (soc_top$RDY_get_to_console_get)
++      if (soc_top$RDY_get_to_console_get) begin
+ 	$write("%c", soc_top$get_to_console_get);
++        $fwrite(fd, "%c", soc_top$get_to_console_get);
++        $fflush(fd);
++      end
+     if (RST_N != `BSV_RESET_VALUE)
+       if (soc_top$RDY_get_to_console_get) $fflush(32'h80000001);
+     if (RST_N != `BSV_RESET_VALUE)
